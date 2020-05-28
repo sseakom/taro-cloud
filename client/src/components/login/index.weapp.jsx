@@ -1,5 +1,5 @@
 import Taro, { Component } from "@tarojs/taro"
-import { AtInput, AtButton, AtTextarea  } from 'taro-ui'
+import { AtInput, AtButton, AtTextarea, AtAvatar } from 'taro-ui'
 import { View } from "@tarojs/components";
 
 export default class Login extends Component {
@@ -72,8 +72,13 @@ export default class Login extends Component {
         <View style={{ display: 'none' }}>
           <AtInput title='手机号' type='text' value={this.state.phone} onChange={this.handleChange.bind(this)}></AtInput>
         </View>
-        <AtButton onClick={this.getLogin}>获取登录云函数</AtButton>
-        <AtTextarea value={JSON.stringify(this.state.context)} disabled></AtTextarea>
+        <AtAvatar circle openData={{ type: 'userAvatarUrl'}}></AtAvatar>
+        {
+          Object.keys(this.state.context).length
+          ? <open-data type='userNickName'></open-data>
+          : <AtButton onClick={this.getLogin}>登录</AtButton>
+        }
+        <AtTextarea style={{ display: 'none' }} value={JSON.stringify(this.state.context)} disabled></AtTextarea>
       </View>
     )
   }

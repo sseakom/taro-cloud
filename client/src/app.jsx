@@ -12,6 +12,7 @@ import './app.styl'
 class App extends Component {
 
   componentDidMount () {
+    console.log('componentDidMount: ', this)
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
     }
@@ -32,11 +33,17 @@ class App extends Component {
 
 
 
-  componentDidShow () {}
+  componentDidShow () {
+    console.log('componentDidShow: ', this)
+  }
 
-  componentDidHide () {}
+  componentDidHide () {
+    console.log('componentDidHide: ', this)
+  }
 
-  componentDidCatchError () {}
+  componentDidCatchError () {
+    console.log('componentDidCatchError: ', this)
+  }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
