@@ -29,6 +29,15 @@ const config = {
       ]
     ]
   },
+  copy: {
+    patterns: [
+      {
+        from: 'src/sitemap.json', to: 'dist/sitemap.json'
+      }, // 指定需要 copy 的目录
+    ],
+    options: {
+    }
+  },
   defineConstants: {
   },
   mini: {
