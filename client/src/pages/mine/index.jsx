@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
+import Login from '../../components/login/index'
 
 export default class Mine extends Component {
 
@@ -22,6 +23,7 @@ export default class Mine extends Component {
   render () {
     return (
       <View className='index'>
+        <Login />
       </View>
     )
   }

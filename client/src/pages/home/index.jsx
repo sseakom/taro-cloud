@@ -2,8 +2,6 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 import './index.styl'
 
-import Login from '../../components/login/index'
-
 export default class Index extends Component {
 
   componentWillMount () { }
@@ -25,7 +23,6 @@ export default class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Login />
       </View>
     )
   }
