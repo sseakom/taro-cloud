@@ -3,7 +3,7 @@ import { View } from '@tarojs/components'
 import { AtList, AtListItem, AtLoadMore } from "taro-ui"
 import './index.styl'
 
-export default class Index extends Component {
+export default class Mission extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ export default class Index extends Component {
   }
 
   config = {
-    navigationBarTitleText: 'launches',
+    navigationBarTitleText: 'missions',
     enablePullDownRefresh: true
   }
 
@@ -28,7 +28,7 @@ export default class Index extends Component {
     const { result } = await Taro.cloud.callFunction({
       name: "query",
       data: {
-        collect: 'launches',
+        collect: 'missions',
         limit: 10,
         offset: this.state.list.length,
       }
@@ -63,7 +63,7 @@ export default class Index extends Component {
 
   enter (item) {
     Taro.navigateTo({
-      url: `/pages/home/detail?id=${item._id}&collect=launches&title=${item.mission_name}`
+      url: `/pages/home/detail?id=${item._id}&collect=missions&title=${item.mission_name}`
     })
   }
 
@@ -75,9 +75,8 @@ export default class Index extends Component {
             this.state.list.map(item => {
               return <AtListItem
                 title={item.mission_name}
-                note={item.details || ''}
+                note={item.description || ''}
                 key={item._id}
-                thumb={item.links.mission_patch_small || ''}
                 onClick={() => this.enter(item)}
               />
             })

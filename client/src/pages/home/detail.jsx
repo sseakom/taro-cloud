@@ -15,16 +15,19 @@ export default class Detail extends Component {
   }
 
   config = {
-    navigationBarTitleText: 'spaceX',
+    navigationBarTitleText: '',
     enablePullDownRefresh: true
   }
 
   async getDetail () {
-    const id = Number(this.$router.params.id) || 1
+    const { id, collect, title } = this.$router.params
+    Taro.setNavigationBarTitle({
+      title: title
+    })
     const { result } = await Taro.cloud.callFunction({
       name: "query",
       data: {
-        collect: 'launches',
+        collect: collect,
         limit: 1,
         offset: 0,
         id: id,
@@ -34,17 +37,16 @@ export default class Detail extends Component {
     const detail = result[0] || {}
     const list = []
     for (const key in detail) {
-      if (detail.hasOwnProperty(key)) {
+      if (detail.hasOwnProperty(key) && (key !== '_id')) {
         list.push({
           title: key,
-          value: detail[key]
+          value: JSON.stringify(detail[key])
         })
       }
     }
     this.setState({
       list: list
     })
-
   }
   async onPullDownRefresh () {
     await this.getDetail()
