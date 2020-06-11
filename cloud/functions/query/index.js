@@ -38,8 +38,10 @@ exports.main = async (event, context) => {
       if (arr[index].hasOwnProperty(key)) {
         if (['{', '['].includes(arr[index][key][0])) {
           newObj[key] = JSON.parse(arr[index][key])
+        } else if (arr[index][key] === 'null') {
+          newObj[key] = ''
         } else {
-          newObj[key] = arr[index][key]
+          newObj[key] = arr[index][key] || ''
         }
       }
     }
