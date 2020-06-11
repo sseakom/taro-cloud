@@ -5,7 +5,7 @@
 	"description": "taro-cloud",
 	"appid": "wx29eab22ac6c0cfe7",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": false,
 		"preloadBackgroundData": false,
@@ -24,7 +24,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",

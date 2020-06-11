@@ -21,6 +21,7 @@ class App extends Component {
   config = {
     pages: [
       'pages/home/index',
+      'pages/home/detail',
       'pages/mine/index'
     ],
     window: {
@@ -30,22 +31,22 @@ class App extends Component {
       navigationBarTextStyle: 'black'
     },
     cloud: true,
-    tabBar: {
-      color: '#999999',
-      backgroundColor: '#ffffff',
-      borderStyle: 'black',
-      selectedColor: '#FF5B00',
-      list: [{
-        pagePath: 'pages/home/index',
-        text: '首页',
-      },
-      {
-        pagePath: 'pages/mine/index',
-        text: '我的',
-        // iconPath: 'images/tabbar/limit.png',
-        // selectedIconPath: 'images/tabbar/limit_hov.png'
-      }]
-    }
+    // tabBar: {
+    //   color: '#999999',
+    //   backgroundColor: '#ffffff',
+    //   borderStyle: 'black',
+    //   selectedColor: '#FF5B00',
+    //   list: [{
+    //     pagePath: 'pages/home/index',
+    //     text: 'launches',
+    //   },
+    //   {
+    //     pagePath: 'pages/mine/index',
+    //     text: '我的',
+    //     // iconPath: 'images/tabbar/limit.png',
+    //     // selectedIconPath: 'images/tabbar/limit_hov.png'
+    //   }]
+    // }
 
   }
 
