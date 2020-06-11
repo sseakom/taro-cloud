@@ -14,7 +14,11 @@ exports.main = async (event, context) => {
   queryObj = {}
 
   if (id) {
-    queryObj._id = id
+    if (isNaN(Number(id))) {
+      queryObj._id = id
+    } else {
+      queryObj._id = Number(id)
+    }
   }
 
   const arr = await col
