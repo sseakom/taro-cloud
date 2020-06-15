@@ -22,6 +22,8 @@ class App extends Component {
     pages: [
       'pages/home/index',
       'pages/mission/index',
+      'pages/payload/index',
+      'pages/core/index',
       'pages/home/detail',
     ],
     window: {
@@ -44,6 +46,18 @@ class App extends Component {
       {
         pagePath: 'pages/mission/index',
         text: 'missions',
+        iconPath: 'img/m.png',
+        selectedIconPath: 'img/m_h.png'
+      },
+      {
+        pagePath: 'pages/payload/index',
+        text: 'payloads',
+        iconPath: 'img/m.png',
+        selectedIconPath: 'img/m_h.png'
+      },
+      {
+        pagePath: 'pages/core/index',
+        text: 'cores',
         iconPath: 'img/m.png',
         selectedIconPath: 'img/m_h.png'
       }]
