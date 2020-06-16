@@ -16,6 +16,9 @@ class App extends Component {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
     }
+    Taro.showShareMenu({
+      withShareTicket: true
+    })
   }
 
   config = {
@@ -37,29 +40,30 @@ class App extends Component {
       color: '#999999',
       backgroundColor: '#ffffff',
       borderStyle: 'black',
+      selectedColor: '#1296db',
       list: [{
         pagePath: 'pages/home/index',
         text: 'launches',
-        iconPath: 'img/r.png',
-        selectedIconPath: 'img/r_h.png'
+        iconPath: 'img/1.png',
+        selectedIconPath: 'img/1_h.png'
       },
       {
         pagePath: 'pages/mission/index',
         text: 'missions',
-        iconPath: 'img/m.png',
-        selectedIconPath: 'img/m_h.png'
+        iconPath: 'img/2.png',
+        selectedIconPath: 'img/2_h.png'
       },
       {
         pagePath: 'pages/payload/index',
         text: 'payloads',
-        iconPath: 'img/m.png',
-        selectedIconPath: 'img/m_h.png'
+        iconPath: 'img/3.png',
+        selectedIconPath: 'img/3_h.png'
       },
       {
         pagePath: 'pages/core/index',
         text: 'cores',
-        iconPath: 'img/m.png',
-        selectedIconPath: 'img/m_h.png'
+        iconPath: 'img/4.png',
+        selectedIconPath: 'img/4_h.png'
       }]
     }
 

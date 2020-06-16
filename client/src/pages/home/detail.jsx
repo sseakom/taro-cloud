@@ -37,11 +37,21 @@ export default class Detail extends Component {
     const detail = result[0] || {}
     const list = []
     for (const key in detail) {
-      if (detail.hasOwnProperty(key) && (key !== '_id')) {
-        list.push({
-          title: key,
-          value: JSON.stringify(detail[key])
-        })
+      if (detail.hasOwnProperty(key) && (key !== '_id') && (detail[key] !== '')) {
+        const type = typeof detail[key]
+        console.log(key, detail[key], type)
+        if ((type === 'string' || type === 'number')) {
+          list.push({
+            title: key,
+            value: detail[key]
+          })
+        }
+        if (type === 'object' && Object.keys(detail[key]).length) {
+          list.push({
+            title: key,
+            value: JSON.stringify(detail[key])
+          })
+        }
       }
     }
     this.setState({
