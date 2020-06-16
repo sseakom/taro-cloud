@@ -16,9 +16,6 @@ class App extends Component {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
     }
-    Taro.showShareMenu({
-      withShareTicket: true
-    })
   }
 
   config = {

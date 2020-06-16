@@ -12,6 +12,9 @@ export default class Core extends Component {
   }
   componentWillMount () {
     this.getList()
+    Taro.showShareMenu({
+      withShareTicket: true
+    })
   }
 
   config = {

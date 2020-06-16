@@ -13,6 +13,9 @@ export default class Mission extends Component {
   }
   componentWillMount () {
     this.getList()
+    Taro.showShareMenu({
+      withShareTicket: true
+    })
   }
 
   config = {

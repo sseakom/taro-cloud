@@ -12,6 +12,9 @@ export default class Detail extends Component {
 
   componentWillMount () {
     this.getDetail()
+    Taro.showShareMenu({
+      withShareTicket: true
+    })
   }
 
   config = {
